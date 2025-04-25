@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="number" id="one" />
+		<input type="number" id="two" />
+		最大值：<input type="number" id="three" />
+		<input type="button" value="MAX"  onclick="maxNumber()" />
+		<br />
+		请输入年份：<input type="number" id="year" />
+		结果：<input type="text" id="result" value=""/>
+		<input type="button"  id="judge" value="判断"  onclick="judge()"/>
+		<br />
+		分数：<input type="number" min="0" max="100" id="fenshu" />
+		成绩：<input type="text"  id="shuchu" value="" />
+		<input type="button"   value="评测"  onclick="pingce()"/>
+		<br />
+		分机号：<input type="number" id="frist" />
+		部门：<input type="text"  id="second"/>
+		<input type="button"  id="thrid" value="查询" onclick="fenji()"/>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	//什么是表达式？
+	//由我们的常量，变量运算符组成，遍地是必须有一个值，eg：a,a+10,10,a=5;
+	var a = 10;
+	console.log(a);
+	console.log(a + 10);
+	console.log(10);
+	console.log(a = 5);
+	//按照操作数的不同，运算符可以分为一元运算符（单目运算符） 二元运算符（双目运算符） 三元运算符（三目运算符）
+	//一元运算符：++，--，-（负号），！
+	//二元运算符：+,-,*,/,%,&&,||..
+	//三元运算符：？：（条件运算符）
+	//语句，代码执行的最小单元
+	
+	//程序的三大结构
+	//1.顺序结构
+	//代码从上到下，从左到右依次执行
+	//2.分支结构
+	//根据条件执行相应的代码
+	//3.循环结构
+	//在满足特定条件的情况下反复执行同一块代码
+	//分支结构
+	//if语句
+	//语法
+	//第一种
+	
+	/*
+	 if(条件表达式){
+	 	语句；
+	 }
+	 如果条件表达式结果为真那样就执行大括号里面的语句，反之，不执行
+	 */
+	var a = 10,b = 5;
+	if(a > b){
+		console.log("最大值:"+a);
+	}
+	if(a < b){
+		console.log("最大值是：" + b);
+	}
+	if(a == b){
+		console.log("a = b");
+	}
+	//第二种
+	/*
+	 if(){
+	 	语句一
+	 	
+	 }else{
+	 	语句二
+	 }
+	 如果表达式为真，就执行语句一，否则，执行语句二
+	 */
+	var str="有雨"
+	if(str == "有雨")
+	{
+		console.log("在家待着");
+	}else{
+		console.log("找女朋友出去玩");
+	}
+	//了解以下函数
+	//语法
+	/*
+	 //函数定义
+	 function函数名（）{
+	 	代码；
+	 }
+	 //函数调用
+	 函数名（）；
+	 */
+	function test(){
+		var a = 10,b = 5;
+		if(a > b){
+			console.log("最大值为"+a);
+		}else{
+			console.log("最大值为")+b;
+		}
+	}
+	//函数的调用
+	test();
+	
+	
+	//练习题，在两个输入框中输入两个数字点击按钮，取到最大值，放到第三个输入框中
+	function maxNumber(){
+		//获取id为 one two three的元素
+		var oneInput=document.getElementById('one');
+		var twoInput=document.getElementById('two');
+		var threeInput=document.getElementById('three');
+		//通过三目运算符求最大值
+		var maxNumber =(oneInput.value - 0) > (twoInput.value- 0) ? oneInput.value:twoInput.value;
+		threeInput.value = maxNumber;
+		
+		
+	}
+	//判断闰年的条件能被400整除或者能被四整除并且不被100整除
+	function judge(){
+		var yearInput=document.getElementById('year');
+		var resultInput=document.getElementById('result');
+		var yearNumber=yearInput.value-0;
+		//判断是闰年还是平年
+		if( (yearNumber % 4 == 0 && yearNumber % 100 !== 0)||yearNumber % 400 == 0 ){
+			resultInput.value="闰年";
+		}else{
+			resultInput.value="平年";
+		}
+		
+	}
+	//求三个数的最大值
+	var a = 15,b = 14, c = 21;
+	var maxNum = a;
+	if (maxNum < b){
+		maxNum=b
+		}
+	if(maxNum < c){
+		maxNum = c;
+	}
+	console.log("最大值是"+maxNum);
+	//第二种
+	var a = 10,b = 15,c =13;
+	var maxNum = a;
+	maxNum = (maxNum > b ? maxNum : b) > c ? (maxNum > b ? maxNum : b):c;
+	console.log("最大值是"+maxNum);
+	
+	// if语句的第三种形式，级联式
+	 /* 
+	  if(条件1){
+	  	代码2；
+	  }else if(条件2){
+	  	代码2；
+	  }else(条件3){
+	  	代码3；
+	  }else(条件n){
+	  	代码n；
+	  }else(条件n+1){
+	  	代码n+1；
+	  }
+	  */
+	 var numberOfFriend = 3;
+	 if(numberOfFriend==1){
+	 	console.log("两个人打台球");
+	 }else if(numberOfFriend==2){
+	 	console.log("三个人斗地主");
+	 }else if(numberOfFriend==3){
+	 	console.log("四个人打麻将");
+	 }else if(numberOfFriend==4){
+	 	console.log("五个人开黑");
+	 }else {
+	 	console.log("ktv");
+	 }
+	 //在输入框中输入一个分数如果分数大于等于90，输出优秀，如果分数大于等于80，小于90，输出良好，如果分数大于等于70且小于80，输出中等，如果分数小于等于70且大于等于60，输出吉格，如果分数超过100或者小于零分，输出error；
+	 
+	function pingce(){
+		var fenshuInput=document.getElementById('fenshu');
+		var shuchuInput=document.getElementById('shuchu');
+		fenshuNum=fenshuInput.value - 0;
+		if(fenshuNum >= 90&& fenshuNum<=100){
+			shuchuInput.value="优秀";
+		}else if(fenshuNum <90 && fenshuNum >=80){
+			shuchuInput.value="良好";
+		}else if(fenshuNum < 80 && fenshuNum >= 70){
+			shuchuInput.value="中等";
+		}else if(fenshuNum < 70 && fenshuNum >= 60){
+			shuchuInput.value="及格";
+		}else if(fenshuNum < 60 && fenshuNum>=0){
+			shuchuInput.value="不及格";
+		} else if (fenshuNum > 100 || fenshuNum < 0){
+			shuchuInput.value="error";
+		}
+		
+	}
+	 // 开关语句switch...case....
+	 /*
+	  switch(表达式){
+	  	case 值1：{
+	  		语句1；
+	  	}
+	  	break；
+	  		case 值2：{
+	  		语句2；
+	  	}
+	  	break；
+	  		case 值3：{
+	  		语句3；
+	  	}
+	  	break；
+	  		case 值n：{
+	  		语句n；
+	  	}
+	  	break；
+	  	default{
+	  		语句n+1；
+	  	}
+	  	break；
+	  }
+	  */
+	 //break是结束switch语句，如果两个case之间没有break关键字，那么走完一个case之后还会跳到下一个case。大括号{}可以省略
+	 var a = 5;
+	 switch(a){
+	 	case 1:{
+	 		console.log("一楼");
+	 	}
+	 	break;
+	 	case 2:{
+	 		console.log("二楼");
+	 	}
+	 	break;
+	 	case 3:{
+	 		console.log("三楼");
+	 	}
+	 	break;
+	 	case 4:{
+	 		console.log("四楼");
+	 	}
+	 	break;
+	 	case 5:{
+	 		console.log("五楼");
+	 	}
+	 	break;
+	 	default:{
+	 		console.log("没有该楼层");
+	 		break;
+	 	}
+	 }
+	 //有一个输入框用来输入分机号，111代表行政部222代表市场部，333代表财务部，444代表教学部，其他输出该分机号不存在（两个输入框一个按钮）
+	 function fenji(){
+	 var firstInput = document.getElementById('frist');
+	 var secondInput = document.getElementById('second');
+	 var fristNum =firstInput.value - 0;
+	 switch(fristNum){
+	 	case 111:{
+	 		secondInput.value="行政部";
+	 		
+	 	}
+	 	break;
+	 	case 222:{
+	 		secondInput.value="市场部";
+	 		
+	 	}
+	 	break;
+	 	case 333:{
+	 		secondInput.value="财务部";
+	 		
+	 	}
+	 	break;
+	 	case 444:{
+	 		secondInput.value="教学部";
+	 		
+	 	}
+	 	break;
+	 	default:{
+	 		secondInput.value="该分机号不存在";
+	 	}
+	 	break;
+	 }
+	 }
+	
+	//循环，for循环，while循环，do....while循环
+	/*
+	 for(1;2;3){
+	 	4
+	 }
+	
+	 
+	 
+	 
+	 
+	 */
+	var a=1;
+	 for(;a<=10;a++){
+	 	console.log("这首第"+a+"圈");	
+	 }
+	 //打印100个心
+	 for(var a=1;a<=100;a++){
+	 	console.log(a+"❤️");
+	 	
+	 }
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+</script>

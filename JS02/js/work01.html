@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		重量：<input type="number" id="one"/>kg
+		价格：<input type="number"id="two" />
+		<input type="button" onclick="suan()" value="计算"/>
+		<hr />
+		X:<input type="number" id="three"/>
+		Y:<input type="number"  id="four"/>
+		<input type="button"  value="输出" onclick="test()" />
+		<hr />
+		Sum:<input type="number" id="five"/>
+		Sumodd:<input type="number" id="six"/>
+		Sumeven:<input type="number"  id="seven"/>
+		<input type="button"  value="求"  onclick="jia()"/>
+		<hr />
+		
+		
+	</body>
+</html>
+<script type="text/javascript">
+	 function suan(){
+	 	var oneInput = document.getElementById('one');
+	 	var twoInput = document.getElementById('two');
+	 	var oneNum = oneInput.value - 0;
+	 	if(oneNum <= 50 && oneNum >= 0){
+	 		twoInput.value = oneNum*0.15*100/100;
+	 	}else if(oneNum > 50){
+	 		twoInput.value = (oneNum-50) * 0.25*100/100 + 7.5;
+	 	}
+	 }
+	 function test(){
+	 	var threeInput = document.getElementById('three');
+	 	var fourInput = document.getElementById('four');
+	 	var threeNum = threeInput.value - 0;
+	 	if(threeNum < 1){
+	 		fourInput.value = threeNum;
+	 	}else if(threeNum >= 1 && threeNum < 10){
+	 		fourInput.value = 2*threeNum - 1;
+	 	}else {
+	 		fourInput.value = 3*threeNum - 11;
+	 	}
+	 	
+	 	
+	 }
+	 function jia(){
+	 	var fiveInput = document.getElementById('five');
+	 	var sixInput = document.getElementById('six');
+	 	var sevenInput = document.getElementById('seven'); 
+	 	for(var a = 0;a<=100;a++ )
+	 	if(a % 2 == 0){
+	 		sixInput.value = Number(sixInput.value) + a;
+	 	}else {
+	 		sevenInput.value = Number(sevenInput.value) + a;
+	 	}
+	 	for(var a = 0;a<=100;a++ )
+	 	{
+	 	fiveInput.value = Number(fiveInput.value) + a;
+	 	}
+	 	
+	 	
+	 	 }
+
+
+	 
+	 
+	 
+</script>

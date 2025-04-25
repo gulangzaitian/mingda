@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		年：<input type="number" id="one" />
+		月：<input type="number" id="two" max="12" min="1"/>
+		日：<input type="number" id="three" max="31" min="1"/>
+		哪一天<input type="number" id="four" />
+		<input type="button"  value="求"  onclick="test()"/>
+	</body>
+</html>
+<script type="text/javascript">
+	function test(){
+		var oneInput = document.getElementById('one');
+		var twoInput = document.getElementById('two');
+		var threeInput = document.getElementById('three');
+		var fourInput = document.getElementById('four');
+		var oneNum = oneInput.value - 0;
+		var twoNum = twoInput.value - 0;
+		var threeNum = threeInput.value - 0;
+		if((oneNum % 4 == 0 && oneNum % 100 !== 0)||oneNum % 400 == 0 ){
+			switch(twoNum){
+				case 1 :
+					fourInput.value = threeNum;
+					break;
+					case 2: 
+					fourInput.value  = 31+ threeNum;
+					break;
+					case 3: 
+					fourInput.value  = 31+29+ threeNum;
+					break;
+					case 4: 
+					fourInput.value  = 31+29+ 31+ threeNum;
+					break;
+					case 5: 
+					fourInput.value  = 31+29+ 31+30+ threeNum;
+					break;
+					case 6: 
+					fourInput.value  = 31+29+ 31+30+31+ threeNum;
+					break;
+					case 7: 
+					fourInput.value  = 31+29+ 31+30+31+30+ threeNum;
+					break;
+					case 8: 
+					fourInput.value  = 31+29+ 31+30+31+30+31+ threeNum;
+					break;
+					case 9: 
+					fourInput.value  = 31+29+ 31+30+31+30+31+30+ threeNum;
+					break;
+					case 10: 
+					fourInput.value  = 31+29+ 31+30+31+30+31+30+30+ threeNum;
+					break;
+					case 11: 
+					fourInput.value  = 31+29+ 31+30+31+30+31+30+30+31+ threeNum;
+					break;
+					case 12: 
+					fourInput.value  = 31+29+ 31+30+31+30+31+30+30+31+ 30+threeNum;
+					break;
+					default:fourInput.value ="不存在";
+					break;
+					
+					
+					
+				
+			}
+		}else{
+			switch(twoNum){
+				case 1 :
+					fourInput.value = threeNum;
+					break;
+					case 2: 
+					fourInput.value  = 31+ threeNum;
+					break;
+					case 3: 
+					fourInput.value  = 31+28+ threeNum;
+					break;
+					case 4: 
+					fourInput.value  = 31+28+ 31+ threeNum;
+					break;
+					case 5: 
+					fourInput.value  = 31+28+ 31+30+ threeNum;
+					break;
+					case 6: 
+					fourInput.value  = 31+28+ 31+30+31+ threeNum;
+					break;
+					case 7: 
+					fourInput.value  = 31+28+ 31+30+31+30+ threeNum;
+					break;
+					case 8: 
+					fourInput.value  = 31+28+ 31+30+31+30+31+ threeNum;
+					break;
+					case 9: 
+					fourInput.value  = 31+28+ 31+30+31+30+31+30+ threeNum;
+					break;
+					case 10: 
+					fourInput.value  = 31+28+ 31+30+31+30+31+30+30+ threeNum;
+					break;
+					case 11: 
+					fourInput.value  = 31+28+ 31+30+31+30+31+30+30+31+ threeNum;
+					break;
+					case 12: 
+					fourInput.value  = 31+28+ 31+30+31+30+31+30+30+31+ 30+threeNum;
+					break;
+					default:fourInput.value ="不存在";
+					break;
+			
+			}
+		}
+		
+	}
+</script>
